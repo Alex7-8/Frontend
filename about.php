@@ -71,7 +71,7 @@
             </ul>
           </li>
 
-          <li><a href="http://localhost/frontend/admin/index.php">Administrar</a></li>
+          <li><a href="admin/index.php">Administrar</a></li>
 
           <li><a href="about.php">Acerca de</a></li>
           
