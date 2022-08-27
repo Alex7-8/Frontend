@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <script src="js/funciones.js"></script>
+	<script src="js/funciones.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -38,7 +38,7 @@
   ======================================================== -->
 </head>
 
-<body onload='buscar(), listas()' >
+<body onload='buscarCategoria(<?php echo '"'.$_GET['categoria'].'"'; ?>), listas()'>
 
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center fixed-top">
@@ -94,8 +94,8 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-6 text-center">
-          <h2>Somos el circuito de cines más diverso con presencia en 15 países de América Latina.</h2>
-          <p>Esta es una ventana dedicada especialmente a películas emblemáticas, eventos deportivos, culturales, musicales y documentales que merecen ser vistos en la pantalla grande.</p>
+          <h2>Peliculas de la Categoria: <?php echo $_GET['categoria'] ?></h2>
+          
           
         </div>
       </div>
@@ -149,6 +149,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
 
 </body>
 

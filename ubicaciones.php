@@ -2,15 +2,17 @@
 <html lang="en">
 
 <head>
+	<script src="js/funciones.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>[Template] Sample Inner Page</title>
+  <title>CINETECH</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="https://instructure-uploads.s3.amazonaws.com/account_192470000000000001/attachments/2022/480.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -36,7 +38,7 @@
   ======================================================== -->
 </head>
 
-<body>
+<body onload='buscarUbicacion(<?php echo '"'.$_GET['ubicacion'].'"'; ?>), listas()'>
 
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center fixed-top">
@@ -45,41 +47,38 @@
       <a href="index.html" class="logo d-flex align-items-center  me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <i class="bi bi-camera"></i>
-        <h1>PhotoFolio</h1>
+        <i class="bi bi-camera-reels"></i>
+        <h1>CineTech</h1>
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li><a href="index.html">Inicio</a></li>
+          
+          <li class="dropdown"><a href="#"><span>Categorias</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="gallery.html">Nature</a></li>
-              <li><a href="gallery.html">People</a></li>
-              <li><a href="gallery.html">Architecture</a></li>
-              <li><a href="gallery.html">Animals</a></li>
-              <li><a href="gallery.html">Sports</a></li>
-              <li><a href="gallery.html">Travel</a></li>
-              <li class="dropdown"><a href="#"><span>Sub Menu</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="#">Sub Menu 1</a></li>
-                  <li><a href="#">Sub Menu 2</a></li>
-                  <li><a href="#">Sub Menu 3</a></li>
-                </ul>
-              </li>
+
+              <div id="categorias"></div>
+              
             </ul>
           </li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
+
+          <li class="dropdown"><a href="#"><span>Ubicaciones</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+
+              <div id="ubicaciones"></div>
+              
+            </ul>
+          </li>
+          <li><a href="http://localhost/frontend/admin/index.php">Administrar</a></li>
+          <li><a href="about.php">Acerca de</a></li>
+          
+          
         </ul>
       </nav><!-- .navbar -->
 
       <div class="header-social-links">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        
       </div>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
@@ -87,32 +86,35 @@
     </div>
   </header><!-- End Header -->
 
-  <main id="main" data-aos="fade" data-aos-delay="1500">
 
-    <!-- ======= End Page Header ======= -->
-    <div class="page-header d-flex align-items-center">
-      <div class="container position-relative">
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-6 text-center">
-            <h2>Sample Inner Page</h2>
-            <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+  <div></div>
 
-            <a class="cta-btn" href="contact.html">Available for hire</a>
-
-          </div>
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex flex-column justify-content-center align-items-center" data-aos="fade" data-aos-delay="1500">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+          <h2>Peliculas en cartelera del cine ubicado en: <?php echo $_GET['ubicacion'] ?></h2>
+          
+          
         </div>
       </div>
-    </div><!-- End Page Header -->
+    </div>
+  </section><!-- End Hero Section -->
 
-    <section class="sample-page">
-      <div class="container" data-aos="fade-up">
+  <main id="main" data-aos="fade" data-aos-delay="1500">
 
-        <p>
-          You can duplicate this sample page and create any number of inner pages you like!
-        </p>
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+      <div class="container-fluid">
+
+        <div id="respuesta_body" class="row gy-4 justify-content-center">
+
+
+        </div>
 
       </div>
-    </section>
+    </section><!-- End Gallery Section -->
 
   </main><!-- End #main -->
 
@@ -120,14 +122,14 @@
   <footer id="footer" class="footer">
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>PhotoFolio</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>KJJsystem</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="https://bootstrapmade.com/">KJJsystem</a>
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -148,6 +150,7 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+ 
 </body>
 
 </html>

@@ -748,6 +748,8 @@
     position: relative;
     overflow: hidden;
     border-radius: 10px;
+    width:50px;
+    height:120px;
   }
   
   .gallery .gallery-item img {

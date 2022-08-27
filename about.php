@@ -2,15 +2,17 @@
 <html lang="en">
 
 <head>
+  <script src="js/funciones.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>PhotoFolio Bootstrap Template - Contact</title>
+  <title>CINETECH</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="https://instructure-uploads.s3.amazonaws.com/account_192470000000000001/attachments/2022/480.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -36,7 +38,7 @@
   ======================================================== -->
 </head>
 
-<body>
+<body onload='listas()' >
 
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center fixed-top">
@@ -45,41 +47,40 @@
       <a href="index.html" class="logo d-flex align-items-center  me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <i class="bi bi-camera"></i>
-        <h1>PhotoFolio</h1>
+        <i class="bi bi-camera-reels"></i>
+        <h1>CineTech</h1>
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li><a href="index.html">Inicio</a></li>
+          
+          <li class="dropdown"><a href="#"><span>Categorias</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="gallery.html">Nature</a></li>
-              <li><a href="gallery.html">People</a></li>
-              <li><a href="gallery.html">Architecture</a></li>
-              <li><a href="gallery.html">Animals</a></li>
-              <li><a href="gallery.html">Sports</a></li>
-              <li><a href="gallery.html">Travel</a></li>
-              <li class="dropdown"><a href="#"><span>Sub Menu</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="#">Sub Menu 1</a></li>
-                  <li><a href="#">Sub Menu 2</a></li>
-                  <li><a href="#">Sub Menu 3</a></li>
-                </ul>
-              </li>
+
+              <div id="categorias"></div>
+              
             </ul>
           </li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
+
+          <li class="dropdown"><a href="#"><span>Ubicaciones</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+
+              <div id="ubicaciones"></div>
+              
+            </ul>
+          </li>
+
+          <li><a href="http://localhost/frontend/admin/index.php">Administrar</a></li>
+
+          <li><a href="about.php">Acerca de</a></li>
+          
+          
         </ul>
       </nav><!-- .navbar -->
 
       <div class="header-social-links">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        
       </div>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
@@ -89,14 +90,20 @@
 
   <main id="main" data-aos="fade" data-aos-delay="1500">
 
-    <!-- ======= End Page Header ======= -->
-    <div class="page-header d-flex align-items-center">
+    
+    <div id="detalle">
+      
+        <div class="page-header d-flex align-items-center">
       <div class="container position-relative">
         <div class="row d-flex justify-content-center">
           <div class="col-lg-6 text-center">
-            <h2>Contact</h2>
-            <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
-
+            <img src="assets/img/logoumg.png" width="350" height="331">
+            <h3>GRUPO DE TRABAJO:</h3>
+            <font color="#27a776">
+            Kateryn Gabriela Monzón Diaz<br>
+            Jeferson Alexander Chacón Orellana<br>
+            Jhonatan Antonio Barrera Tzun<br>
+          </font>
           </div>
         </div>
       </div>
@@ -105,72 +112,46 @@
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container">
-
         <div class="row gy-4 justify-content-center">
 
           <div class="col-lg-3">
             <div class="info-item d-flex">
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <h4>Curso:</h4>
+                <p>Desarrollo Web</p>
               </div>
             </div>
           </div><!-- End Info Item -->
 
           <div class="col-lg-3">
             <div class="info-item d-flex">
-              <i class="bi bi-envelope flex-shrink-0"></i>
+              <i class="bi bi-boxes flex-shrink-0"></i>
               <div>
-                <h4>Email:</h4>
-                <p>info@example.com</p>
+                <h4>Horario:</h4>
+                <p>14:00Hrs - 16:00Hrs</p>
               </div>
             </div>
           </div><!-- End Info Item -->
 
           <div class="col-lg-3">
             <div class="info-item d-flex">
-              <i class="bi bi-phone flex-shrink-0"></i>
+              <i class="bi bi-calendar-check-fill flex-shrink-0"></i>
               <div>
-                <h4>Call:</h4>
-                <p>+1 5589 55488 55</p>
+                <h4>Sede:</h4>
+                <p>Guastatoya, El Progreso</p>
               </div>
             </div>
           </div><!-- End Info Item -->
 
         </div>
 
-        <div class="row justify-content-center mt-4">
-
-          <div class="col-lg-9">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
+       
 
       </div>
-    </section><!-- End Contact Section -->
+    </section>
+
+    </div>
 
   </main><!-- End #main -->
 
@@ -178,14 +159,14 @@
   <footer id="footer" class="footer">
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>PhotoFolio</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>KJJsystem</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="https://bootstrapmade.com/">KJJsystem</a>
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -206,6 +187,15 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+
+<!--Estado: true
+Poster: "https://static.cinepolis.com/img/peliculas/31967/1/1/31967.jpg"
+Title: "La viuda"
+Type: "Suspenso"
+Ubication: "Oklan"
+Year: "2019"
+description: "Frances es una dulce e ingenua joven que, tras la muerte de su madre, se muda a Manhattan. Cuando encuentra en el metro un bolso extraviado, decide entregárselo a su legítima dueña, Greta, una pianista viuda con una desesperada necesidad de compañía. Rápidamente se convierten en amigas, pero su amistad cambia cuando se descubren las siniestras intenciones de Greta."
+imdbID: "P004"-->
 </body>
 
 </html>

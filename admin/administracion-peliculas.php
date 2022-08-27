@@ -2,8 +2,10 @@
 <html lang="en">
 
 <head>
-  <script src="js/funciones.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../js/funciones.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -13,7 +15,7 @@
 
   <!-- Favicons -->
   <link href="https://instructure-uploads.s3.amazonaws.com/account_192470000000000001/attachments/2022/480.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,15 +23,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="../assets/css/main.css" rel="stylesheet">
 
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script  src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
   <!-- =======================================================
   * Template Name: PhotoFolio - v1.0.0
   * Template URL: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
@@ -38,40 +46,22 @@
   ======================================================== -->
 </head>
 
-<body onload='buscar(), listas()' >
+<body onload='buscarAdmin(), listas()' style="background:#F4F3F3;">
 
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center  me-auto me-lg-0">
+      <a href="#" class="logo d-flex align-items-center  me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <!-- <img src="../assets/img/logo.png" alt=""> -->
         <i class="bi bi-camera-reels"></i>
         <h1>CineTech</h1>
       </a>
 
       <nav id="navbar" class="navbar">
          <ul>
-          <li><a href="index.html">Inicio</a></li>
-          
-          <li class="dropdown"><a href="#"><span>Categorias</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-
-              <div id="categorias"></div>
-              
-            </ul>
-          </li>
-
-          <li class="dropdown"><a href="#"><span>Ubicaciones</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-
-              <div id="ubicaciones"></div>
-              
-            </ul>
-          </li>
-          <li><a href="http://localhost/frontend/admin/index.php">Administrar</a></li>
-          <li><a href="about.php">Acerca de</a></li>
+          <li><a href="http://localhost/frontend/index.html">Pagina Publica</a></li>
           
           
         </ul>
@@ -87,15 +77,14 @@
   </header><!-- End Header -->
 
 
-  <div></div>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex flex-column justify-content-center align-items-center" data-aos="fade" data-aos-delay="1500">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-6 text-center">
-          <h2>Somos el circuito de cines más diverso con presencia en 15 países de América Latina.</h2>
-          <p>Esta es una ventana dedicada especialmente a películas emblemáticas, eventos deportivos, culturales, musicales y documentales que merecen ser vistos en la pantalla grande.</p>
+          <h2>Administracion de Cartelera</h2>
+          
           
         </div>
       </div>
@@ -106,7 +95,43 @@
 
     <!-- ======= Gallery Section ======= -->
     <section id="gallery" class="gallery">
-      <div class="container-fluid">
+
+      <div class="container-fluid ">
+
+
+<table id="adminPeliculas" class="table table-striped table-bordered" style="width:100%;">
+	<center>
+<a href="http://localhost/frontend/admin/nueva-pelicula.php" class="btn btn-lg btn-dark" style="margin-top: -30px; margin-bottom: 15px;">Agregar Nueva Pelicula</a>
+        </center>
+        <thead>
+            <tr>
+                <th>Poster</th>
+                <th>Titulo</th>
+                <th>Tipo</th>
+                <th>Descripcion</th>
+                <th>Ubicacion</th>
+                <th>Año</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="bodyTablePeliculas">
+           
+         
+        </tbody>
+        <tfoot>
+            <tr>
+            	<th>Poster</th>
+                <th>Titulo</th>
+                <th>Tipo</th>
+                <th>Descripcion</th>
+                <th>Ubicacion</th>
+                <th>Año</th>
+                <th>Acciones</th>
+                
+            </tr>
+        </tfoot>
+    </table>
+
 
         <div id="respuesta_body" class="row gy-4 justify-content-center">
 
@@ -141,14 +166,20 @@
   </div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
+
+		<script type="text/javascript"> 
+			$(document).ready(function () {
+		    
+		});
+		</script>
 
 </body>
 

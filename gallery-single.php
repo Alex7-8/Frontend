@@ -38,7 +38,7 @@
   ======================================================== -->
 </head>
 
-<body onload='buscar(), listas()' >
+<body onload='cargar(<?php echo '"'.$_GET['id'].'"'; ?>), listas()' >
 
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center fixed-top">
@@ -52,7 +52,7 @@
       </a>
 
       <nav id="navbar" class="navbar">
-         <ul>
+        <ul>
           <li><a href="index.html">Inicio</a></li>
           
           <li class="dropdown"><a href="#"><span>Categorias</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
@@ -86,35 +86,13 @@
     </div>
   </header><!-- End Header -->
 
-
-  <div></div>
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero d-flex flex-column justify-content-center align-items-center" data-aos="fade" data-aos-delay="1500">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-6 text-center">
-          <h2>Somos el circuito de cines más diverso con presencia en 15 países de América Latina.</h2>
-          <p>Esta es una ventana dedicada especialmente a películas emblemáticas, eventos deportivos, culturales, musicales y documentales que merecen ser vistos en la pantalla grande.</p>
-          
-        </div>
-      </div>
-    </div>
-  </section><!-- End Hero Section -->
-
   <main id="main" data-aos="fade" data-aos-delay="1500">
 
-    <!-- ======= Gallery Section ======= -->
-    <section id="gallery" class="gallery">
-      <div class="container-fluid">
+    
+    <div id="detalle">
+      
 
-        <div id="respuesta_body" class="row gy-4 justify-content-center">
-
-
-        </div>
-
-      </div>
-    </section><!-- End Gallery Section -->
+    </div>
 
   </main><!-- End #main -->
 
@@ -150,6 +128,15 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+
+<!--Estado: true
+Poster: "https://static.cinepolis.com/img/peliculas/31967/1/1/31967.jpg"
+Title: "La viuda"
+Type: "Suspenso"
+Ubication: "Oklan"
+Year: "2019"
+description: "Frances es una dulce e ingenua joven que, tras la muerte de su madre, se muda a Manhattan. Cuando encuentra en el metro un bolso extraviado, decide entregárselo a su legítima dueña, Greta, una pianista viuda con una desesperada necesidad de compañía. Rápidamente se convierten en amigas, pero su amistad cambia cuando se descubren las siniestras intenciones de Greta."
+imdbID: "P004"-->
 </body>
 
 </html>
