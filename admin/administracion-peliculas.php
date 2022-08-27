@@ -61,7 +61,7 @@
 
       <nav id="navbar" class="navbar">
          <ul>
-          <li><a href="http://localhost/frontend/index.html">Pagina Publica</a></li>
+          <li><a href="../index.html">Pagina Publica</a></li>
           
           
         </ul>
@@ -101,7 +101,7 @@
 
 <table id="adminPeliculas" class="table table-striped table-bordered" style="width:100%;">
 	<center>
-<a href="http://localhost/frontend/admin/nueva-pelicula.php" class="btn btn-lg btn-dark" style="margin-top: -30px; margin-bottom: 15px;">Agregar Nueva Pelicula</a>
+<a href="nueva-pelicula.php" class="btn btn-lg btn-dark" style="margin-top: -30px; margin-bottom: 15px;">Agregar Nueva Pelicula</a>
         </center>
         <thead>
             <tr>

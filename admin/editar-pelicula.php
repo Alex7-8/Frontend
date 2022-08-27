@@ -54,7 +54,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="http://localhost/frontend/index.html">Pagina Publica</a></li>
+          <li><a href="../index.html">Pagina Publica</a></li>
           
          
 
